@@ -7,12 +7,12 @@ const ExcelJS = require("exceljs");
 const connectDB = require('./db/mongoose');
 const QueryHistory = require('./models/QueryHistory');
 const API_TIMEOUT = parseInt(process.env.API_TIMEOUT || '30000', 10);
-const cors = require('cors');
+// const cors = require('cors');
 
-const app = express();
+// const app = express();
 
-// Allow all origins (for testing or general public APIs)
-app.use(cors());
+// // Allow all origins (for testing or general public APIs)
+// app.use(cors());
 connectDB();
 // --------------------- Slack Bot Setup --------------------- //
 const slackApp = new App({
