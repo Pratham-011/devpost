@@ -209,7 +209,7 @@ interface ApiResponse {
   contentType: string;
 }
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5000';
+const API_BASE = import.meta.env.VITE_API_BASE || 'https://bot-kkha.onrender.com';
 const API_KEY = import.meta.env.VITE_API_KEY;
 const USER_ID = import.meta.env.VITE_USER_ID;
 const TENANT_ID = import.meta.env.VITE_TENANT_ID;

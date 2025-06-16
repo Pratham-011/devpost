@@ -2154,24 +2154,24 @@ const upload = multer({ storage: multer.memoryStorage() });
 
 let pipeline, RawImage;
 
-(async () => {
-  console.log("⏳ Loading CLIP model...");
+// (async () => {
+//   console.log("⏳ Loading CLIP model...");
 
-  try {
-    const transformers = await import('@xenova/transformers');
-    pipeline = transformers.pipeline;
-    RawImage = transformers.RawImage;
+//   try {
+//     const transformers = await import('@xenova/transformers');
+//     pipeline = transformers.pipeline;
+//     RawImage = transformers.RawImage;
 
-    extractor = await pipeline('image-feature-extraction', 'Xenova/clip-vit-base-patch32', {
-      progress_callback: (progress) => console.log(`Model loading progress: ${progress}%`),
-    });
+//     extractor = await pipeline('image-feature-extraction', 'Xenova/clip-vit-base-patch32', {
+//       progress_callback: (progress) => console.log(`Model loading progress: ${progress}%`),
+//     });
 
-    console.log("✅ CLIP model loaded.");
-  } catch (err) {
-    console.error('❌ Failed to load CLIP model:', err);
-    process.exit(1);
-  }
-})();
+//     console.log("✅ CLIP model loaded.");
+//   } catch (err) {
+//     console.error('❌ Failed to load CLIP model:', err);
+//     process.exit(1);
+//   }
+// })();
 
 
 appExpress.post('/api/chat', upload.single('image'), async (req, res) => {
